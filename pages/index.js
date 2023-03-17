@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
 import 'quill-editor-math/dist/index.css';
-var QuillDeltaToHtmlConverter = require('quill-delta-to-html');
 
 const Editor = dynamic(
   () => import('quill-editor-math').then((mod) => mod.default),
@@ -13,8 +12,8 @@ const Editor = dynamic(
 );
 
 export default function Home() {
-  const onChange = (value) => {
-    console.log(QuillDeltaToHtmlConverter);
+  const onChange = (value, delt) => {
+    console.log(delta);
   };
 
   return (
