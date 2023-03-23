@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
-import 'quill-editor-math/dist/index.css';
+import 'quill-editor-math-fix/dist/index.css';
 
 const Editor = dynamic(
-  () => import('quill-editor-math').then((mod) => mod.default),
+  () => import('quill-editor-math-fix').then((mod) => mod.default),
   {
     ssr: false,
     loading: () => <p>Editor loading now ...</p>,
@@ -13,7 +13,7 @@ const Editor = dynamic(
 
 export default function Home() {
   const onChange = (value, delta, source, editor) => {
-    console.log(delta);
+    console.log(value,delta, source, editor);
   };
 
   return (
