@@ -12,8 +12,9 @@ const Editor = dynamic(
 );
 
 export default function Home() {
-  const onChange = (value, delta, source, editor) => {
-    console.log("value => ",value,"\nDelta =>",delta,"\nSource => ",source,"\nEditor =>", editor.getContents());
+  const onChange = (editor) => {
+    console.log(editor);
+    //console.log("value => ",value,"\nDelta =>",delta,"\nSource => ",source,"\nEditor =>", editor.getContents());
   };
 
   return (
