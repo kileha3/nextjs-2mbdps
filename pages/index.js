@@ -25,9 +25,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Text Editor React Quill</h1>
         <br />
-        <Editor initialValue="Hello World" onChange={(value, delta, source, editor) => {
-          console.log(value, delta, source, editor);
-        }} />
+        <Editor initialValue="Hello World" onChange={onChange} />
       </main>
 
       <footer className={styles.footer}>
